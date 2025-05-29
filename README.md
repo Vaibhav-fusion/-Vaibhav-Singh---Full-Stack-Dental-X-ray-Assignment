@@ -1,16 +1,16 @@
+tech Stack
+-React (Vite)
 
+-Tailwind CSS
 
------<Important for runing>-------
-Create your own '.env' file inside the 'src'  folder , in the format below and put your own gemini key and roboflow key  ->
+-Roboflow API (Object Detection)
 
-roboflow_api_key=[YOUR ROBOFLOW KEY]
-gemini_api_key=[YOUR GEMINI KEY]
+-Google Gemini Pro API (Natural Language Summary)
 
+-Axios for API calls
 
-Tech-stack use->
+🔐 .env File Setup
+Create a .env file in the root of your project and include the following:
 
-
-
-
-
-
+VITE_ROBOFLOW_API_KEY=your_roboflow_key_here
+VITE_GEMINI_API_KEY=your_gemini_key_her

@@ -1,19 +1,20 @@
-import React from "react";
+import { useState } from "react";
+import Summary from "./components/Summary";
 import Upload from "./components/Upload";
 
-function App() {
-  return (
-    <div className="min-h-screen flex">
-      <div className="w-2/3 bg-gray-50 border-r border-gray-300 p-6 flex flex-col items-center">
-        <h2 className="text-xl font-semibold mb-4">Dental X-ray Viewer</h2>
-        <Upload/>
-      </div>
+export default function App() {
+  const [detections, setDetections] = useState([]);
+  const [summary, setSummary] = useState("");
 
-      <div className="w-1/3 bg-white p-6">
-        <h2 className="text-xl font-semibold mb-4">Diagnostic Report</h2>
-      </div>
+  return (
+    <div className="min-h-screen bg-gray-100 p-6 font-sans">
+      <h1 className="text-3xl font-bold text-center mb-6">🦷 Dental X-ray Detector</h1>
+
+      <Upload onDetections={setDetections} />
+
+      {detections.length > 0 && (
+        <Summary detections={detections} onSummary={setSummary} summary={summary} />
+      )}
     </div>
   );
 }
-
-export default App;
